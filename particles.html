@@ -6,7 +6,7 @@
     <title>PARTICLES</title>
 </head>
 <body>
-    
+
     <canvas id = "particle"></canvas>
     <button id="RunButton" style="background-color: white; position: absolute; top: 20px; left: 30px; font-size: large; width: 65px; color: black;" type="button" onclick="OnClickRun()" disabled>RUN</button>
     <button id="StopButton" style="background-color: white; position: absolute; top: 20px; left: 110px; font-size: large; width: 72px; color: black;" type="button" onclick="OnClickStop()"disabled>STOP</button>
@@ -26,9 +26,13 @@
         
         window.addEventListener('resize', resizeCanvas);
         
-        canvas.fillStyle = "#1c1c1c"
-        canvas.fillRect(0, 0, 200, canvasElement.height)
-        
+        function SideBox(){
+            canvas.fillStyle = "#1c1c1c"
+            canvas.fillRect(0, 0, 200, canvasElement.height)
+        }
+
+        SideBox()
+
         function draw(x, y, c, s) {
             canvas.fillStyle = c
             canvas.fillRect(x, y, s, s)
@@ -130,6 +134,7 @@
                 draw(particle2.x, particle2.y, particle2.color, 30)
                 draw(particle3.x, particle3.y, particle3.color, 30)
                 draw(particle4.x, particle4.y, particle4.color, 30)
+                SideBox()
                 requestAnimationFrame(update)
             }
 
