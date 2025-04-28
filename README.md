@@ -1,6 +1,6 @@
 # Particles with js
 
-## trial 1:
+## 1:
 
 (initial trial with only 4 particles and fixed positions, have to fix velocity)
 ![Screenshot 2025-04-27 144737](https://github.com/user-attachments/assets/c255d973-f565-4254-91fe-7cd796a74b21)
