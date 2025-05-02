@@ -76,7 +76,7 @@
             return a
         }
 
-        function force(particles1, particles2, g){
+        function force(particles1, particles2, g, radius, VelocityMultiplier){
             for(let i=0; i<particles1.length; i++){
                 fx = 0;
                 fy = 0;
@@ -87,15 +87,15 @@
                     dy = a.y - b.y
                     d = Math.sqrt(dx*dx + dy*dy);
 
-                    if(d > 0 && d < 80){
+                    if(d > 0 && d < radius){
                         F = g * 1/d
                         fx += (F * dx)
                         fy += (F * dy)
                     }
                 }
 
-                a.vx = (a.vx + fx)  * .8
-                a.vy = (a.vy + fy)  * .8
+                a.vx = (a.vx + fx)  * VelocityMultiplier
+                a.vy = (a.vy + fy)  * VelocityMultiplier
                 a.x += a.vx
                 a.y += a.vy
                 if(a.x <= 200 || a.x >= canvasElement.width){
@@ -114,15 +114,15 @@
         green = Random_Particles(180, "green")
         
         function update() {
-            force(red, red, -0.2)
-            force(blue, red, -0.2)
-            force(red, green, -0.1)
-            force(red, yellow, -0.1)
-            force(blue, yellow, -0.1)
-            force(red, blue, -0.1)
-            force(yellow, red, 0.1)
-            force(yellow, green, 0.1)
-            force(yellow, blue, 0.1)
+            force(red, red, -0.174, 80, 0.5)
+            force(blue, red, -0.098, 100, .6)
+            force(red, green, -0.1, 78, 1.7)
+            force(green, yellow, -0.111, 120, .5)
+            force(blue, yellow, 0.1, 70, 1.5)
+            force(red, blue, 0.0923, 112, 1)
+            force(yellow, red, -0.0789, 100, .6)
+            force(green, green, 0.132, 85, .71)
+            force(yellow, blue, 0.1, 78, .6)
             if (running === true){
                 canvas.clearRect(200, 0, canvasElement.width, canvasElement.height)
                 draw(200, 0, "black", canvasElement.width)
