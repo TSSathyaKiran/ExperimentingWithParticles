@@ -108,12 +108,22 @@
             }
         }
 
+        // colors of the particles you want
+        // color = Random_Particles(number, color-name)
+
         yellow = Random_Particles(300, "yellow")
         blue = Random_Particles(150, "blue")
         red = Random_Particles(270, "red")
         green = Random_Particles(180, "green")
         
         function update() {
+
+            // behavior of the particles with each other particle
+            // force(Particle1, Particle2, Force-Multiplier, Radius, Velocity-Multiplier)
+            // Force-Multiplier: negtive for attraction and positive for repulsion
+            // Radius: how far each particle checks 
+            // Velocity-Multiplier: multiplier for velocity of particle1 w.r.t particle2
+
             force(red, red, -0.174, 80, 0.5)
             force(blue, red, -0.098, 100, .6)
             force(red, green, -0.1, 78, 1.7)
@@ -123,6 +133,7 @@
             force(yellow, red, -0.0789, 100, .6)
             force(green, green, 0.132, 85, .71)
             force(yellow, blue, 0.1, 78, .6)
+            
             if (running === true){
                 canvas.clearRect(200, 0, canvasElement.width, canvasElement.height)
                 draw(200, 0, "black", canvasElement.width)
