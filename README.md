@@ -28,12 +28,12 @@
 
 ``` javascript
 
-        // color = Random_Particles(number, color-name)
+// color = Random_Particles(number, color-name)
 
-        yellow = Random_Particles(300, "yellow")
-        blue = Random_Particles(150, "blue")
-        red = Random_Particles(270, "red")
-        green = Random_Particles(180, "green")
+yellow = Random_Particles(300, "yellow")
+blue = Random_Particles(150, "blue")
+red = Random_Particles(270, "red")
+green = Random_Particles(180, "green")
 
 ```
 
@@ -41,19 +41,19 @@
 
 ``` javascript
 
-            // force(Particle1, Particle2, Force-Multiplier, Radius, Velocity-Multiplier)
-            // Force-Multiplier: negtive for attraction and positive for repulsion
-            // Radius: how far each particle checks 
-            // Velocity-Multiplier: multiplier for velocity of particle1 w.r.t particle2
+// force(Particle1, Particle2, Force-Multiplier, Radius, Velocity-Multiplier)
+// Force-Multiplier: negtive for attraction and positive for repulsion
+// Radius: how far each particle checks 
+// Velocity-Multiplier: multiplier for velocity of particle1 w.r.t particle2
 
-            force(red, red, -0.174, 80, 0.5)
-            force(blue, red, -0.098, 100, .6)
-            force(red, green, -0.1, 78, 1.7)
-            force(green, yellow, -0.111, 120, .5)
-            force(blue, yellow, 0.1, 70, 1.5)
-            force(red, blue, 0.0923, 112, 1)
-            force(yellow, red, -0.0789, 100, .6)
-            force(green, green, 0.132, 85, .71)
-            force(yellow, blue, 0.1, 78, .6)
+force(red, red, -0.174, 80, 0.5)
+force(blue, red, -0.098, 100, .6)
+force(red, green, -0.1, 78, 1.7)
+force(green, yellow, -0.111, 120, .5)
+force(blue, yellow, 0.1, 70, 1.5)
+force(red, blue, 0.0923, 112, 1)
+force(yellow, red, -0.0789, 100, .6)
+force(green, green, 0.132, 85, .71)
+force(yellow, blue, 0.1, 78, .6)
 
 ```
