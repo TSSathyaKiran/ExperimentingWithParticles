@@ -11,7 +11,15 @@
     <button id="RunButton" style="background-color: white; position: absolute; top: 20px; left: 30px; font-size: large; width: 65px; color: black;" type="button" onclick="OnClickRun()" disabled>RUN</button>
     <button id="StopButton" style="background-color: white; position: absolute; top: 20px; left: 110px; font-size: large; width: 72px; color: black;" type="button" onclick="OnClickStop()"disabled>STOP</button>
     <button style="background-color: white; position: absolute; top: 60px; left: 43px; font-size: large; width: 120px; color: black;" type="button" onclick="location.reload()">RESET</button>
-  
+    
+    <input type="range" id="blue" max="300" min="0" value="100" style="position: absolute; top: 130px; left: 20px; width: 100px;">
+    
+    <input type="range" id="red" max="300" min="0" value="100" style="position: absolute; top: 180px; left: 20px; width: 100px;">
+    
+    <input type="range" id="green" max="300" min="0" value="100" style="position: absolute; top: 230px; left: 20px; width: 100px;">
+    
+    <input type="range" id="yellow" max="300" min="0" value="100" style="position: absolute; top: 280px; left: 20px; width: 100px;">
+
     <script>
         const canvasElement = document.getElementById("particle");
         const canvas = canvasElement.getContext('2d');
@@ -129,11 +137,11 @@
             force(red, green, -0.1, 78, 1.7)
             force(green, yellow, -0.111, 120, .5)
             force(blue, yellow, 0.1, 70, 1.5)
-            force(red, blue, 0.0923, 112, 1)
+            // // force(red, blue, 0.0923, 112, 1)
             force(yellow, red, -0.0789, 100, .6)
             force(green, green, 0.132, 85, .71)
             force(yellow, blue, 0.1, 78, .6)
-            
+
             if (running === true){
                 canvas.clearRect(200, 0, canvasElement.width, canvasElement.height)
                 draw(200, 0, "black", canvasElement.width)
